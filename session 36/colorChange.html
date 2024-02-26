@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>colorchange</title>
+    <style>
+        body{
+            display: flex;
+            height:80vh;
+            justify-content: center;
+            align-items: center;
+        }
+        #A{
+            height: 50vh;
+            width: 50vh;
+        }
+        #B{
+            height: 50vh;
+            width: 50vh;
+        }
+    </style>
+</head>
+<body>
+    <div id="A">
+        <button id="butA" onclick="clickA()">A</button>
+    </div>
+    <div id="B">
+        <button id="butB" onclick="clickB()">B</button>
+    </div>
+    <script>
+        let divA = document.getElementById('A');
+        let divB = document.getElementById('B');
+        function clickA(){
+            divB.style.backgroundColor = getColor();
+        }
+        function clickB(){
+            divA.style.backgroundColor = getColor();
+        }
+        function getColor(){
+            let color = '#'+ Math.ceil(Math.random()*10000000).toString(16);
+            return color;
+        }
+    </script>
+</body>
+</html>
